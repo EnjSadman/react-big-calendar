@@ -54,7 +54,7 @@ class EventCell extends React.Component {
             slotEnd={slotEnd}
           />
         ) : (
-          title
+          (title, bgColor)
         )}
       </div>
     )
