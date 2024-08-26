@@ -54,7 +54,7 @@ class EventCell extends React.Component {
             slotEnd={slotEnd}
           />
         ) : (
-          (title, bgColor)
+          `${title} ${bgColor}`
         )}
       </div>
     )
@@ -75,7 +75,6 @@ class EventCell extends React.Component {
           onKeyDown={(e) => onKeyPress && onKeyPress(event, e)}
         >
           {typeof children === 'function' ? children(content) : content}
-          {bgColor}
         </div>
       </EventWrapper>
     )
