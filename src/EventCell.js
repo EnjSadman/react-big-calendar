@@ -63,7 +63,7 @@ class EventCell extends React.Component {
       <EventWrapper {...this.props} type="date">
         <div
           {...props}
-          style={{ ...userProps.style, ...style, backgroundColor: bgColor}}
+          style={{ ...userProps.style, ...style, backgroundColor: bgColor }}
           className={clsx('rbc-event', className, userProps.className, {
             'rbc-selected': selected,
             'rbc-event-allday': showAsAllDay,
@@ -75,6 +75,7 @@ class EventCell extends React.Component {
           onKeyDown={(e) => onKeyPress && onKeyPress(event, e)}
         >
           {typeof children === 'function' ? children(content) : content}
+          {bgColor}
         </div>
       </EventWrapper>
     )
