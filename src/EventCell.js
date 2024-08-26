@@ -22,12 +22,12 @@ class EventCell extends React.Component {
       components: { event: Event, eventWrapper: EventWrapper },
       slotStart,
       slotEnd,
-      bgColor,
       ...props
     } = this.props
     delete props.resizable
 
     let title = accessors.title(event)
+    let bgColor = accessors.bgColor(event)
     let tooltip = accessors.tooltip(event)
     let end = accessors.end(event)
     let start = accessors.start(event)
