@@ -27,7 +27,6 @@ class EventCell extends React.Component {
     delete props.resizable
 
     let title = accessors.title(event)
-    let bgColor = accessors.bgColor(event)
     let tooltip = accessors.tooltip(event)
     let end = accessors.end(event)
     let start = accessors.start(event)
@@ -54,7 +53,7 @@ class EventCell extends React.Component {
             slotEnd={slotEnd}
           />
         ) : (
-          `${title} ${bgColor}`
+          `${title} ${event.bgColor}`
         )}
       </div>
     )
@@ -63,7 +62,11 @@ class EventCell extends React.Component {
       <EventWrapper {...this.props} type="date">
         <div
           {...props}
-          style={{ ...userProps.style, ...style, backgroundColor: bgColor }}
+          style={{
+            ...userProps.style,
+            ...style,
+            backgroundColor: event.bgColor,
+          }}
           className={clsx('rbc-event', className, userProps.className, {
             'rbc-selected': selected,
             'rbc-event-allday': showAsAllDay,
